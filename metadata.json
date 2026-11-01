@@ -1,0 +1,6 @@
+{
+  "name": "FTTH Network Mapper & Optical Loss Analysis",
+  "description": "Standalone GIS module to map FTTH network assets, trace ONU to SFP paths, calculate optical loss, manage splicing/cores, and analyze topology.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,325 @@
+{
+  "sfps": [
+    {
+      "id": "sfp-1",
+      "code": "SFP-CO-01",
+      "name": "Central Office SFP S1-P1",
+      "slot": 1,
+      "port": 1,
+      "tx_power_dbm": 3.0,
+      "latitude": 37.7750,
+      "longitude": -122.4180,
+      "description": "Primary GPON OLT SFP transmitter housed in regional Central Office.",
+      "created_at": "2026-01-10T12:00:00Z",
+      "updated_at": "2026-01-10T12:00:00Z"
+    },
+    {
+      "id": "sfp-2",
+      "code": "SFP-CO-02",
+      "name": "Central Office SFP S1-P2",
+      "slot": 1,
+      "port": 2,
+      "tx_power_dbm": 2.5,
+      "latitude": 37.7750,
+      "longitude": -122.4180,
+      "description": "Secondary backup GPON SFP transmitter in central rack.",
+      "created_at": "2026-01-10T12:00:00Z",
+      "updated_at": "2026-01-10T12:00:00Z"
+    }
+  ],
+  "odcs": [
+    {
+      "id": "odc-1",
+      "code": "ODC-HUB-01",
+      "name": "Main Distribution Cabinet ODC-1",
+      "latitude": 37.7770,
+      "longitude": -122.4150,
+      "total_ports": 32,
+      "splitter_type": "1:16",
+      "splitter_loss_db": 13.8,
+      "description": "Main primary distribution cabinet serving SF Center North blocks.",
+      "created_at": "2026-01-10T12:05:00Z",
+      "updated_at": "2026-01-10T12:05:00Z"
+    },
+    {
+      "id": "odc-2",
+      "code": "ODC-HUB-02",
+      "name": "South Sector Hub ODC-2",
+      "latitude": 37.7730,
+      "longitude": -122.4200,
+      "total_ports": 16,
+      "splitter_type": "1:8",
+      "splitter_loss_db": 10.5,
+      "description": "Sub-sector cabinet serving lower blocks.",
+      "created_at": "2026-01-10T12:05:00Z",
+      "updated_at": "2026-01-10T12:05:00Z"
+    }
+  ],
+  "odps": [
+    {
+      "id": "odp-1",
+      "code": "ODP-POLE-101",
+      "name": "Pole-mount Termination ODP-101",
+      "latitude": 37.7790,
+      "longitude": -122.4130,
+      "odc_id": "odc-1",
+      "total_ports": 8,
+      "description": "ODP box mounted on utility pole 44B, serving 8 residential connections.",
+      "created_at": "2026-01-10T12:10:00Z",
+      "updated_at": "2026-01-10T12:10:00Z"
+    },
+    {
+      "id": "odp-2",
+      "code": "ODP-POLE-102",
+      "name": "Wall-mount Box ODP-102",
+      "latitude": 37.7760,
+      "longitude": -122.4100,
+      "odc_id": "odc-1",
+      "total_ports": 8,
+      "description": "ODP box installed on commercial building facade.",
+      "created_at": "2026-01-10T12:10:00Z",
+      "updated_at": "2026-01-10T12:10:00Z"
+    },
+    {
+      "id": "odp-3",
+      "code": "ODP-POLE-201",
+      "name": "Pole-mount ODP-201",
+      "latitude": 37.7715,
+      "longitude": -122.4220,
+      "odc_id": "odc-2",
+      "total_ports": 8,
+      "description": "ODP box connected to south sector odc hub.",
+      "created_at": "2026-01-12T09:00:00Z",
+      "updated_at": "2026-01-12T09:00:00Z"
+    }
+  ],
+  "onus": [
+    {
+      "id": "onu-1",
+      "code": "ONU-SUB-9001",
+      "name": "Subscriber Residential ONU-1",
+      "customer_id": "pppoe_user1_residential",
+      "remote_address": "10.10.10.11",
+      "latitude": 37.7805,
+      "longitude": -122.4120,
+      "odp_id": "odp-1",
+      "description": "ONU residential customer terminal in apartment unit 3B.",
+      "created_at": "2026-01-10T12:15:00Z",
+      "updated_at": "2026-01-10T12:15:00Z"
+    },
+    {
+      "id": "onu-2",
+      "code": "ONU-SUB-9002",
+      "name": "Subscriber Business ONU-2",
+      "customer_id": "pppoe_user2_business",
+      "remote_address": "10.10.10.12",
+      "latitude": 37.7755,
+      "longitude": -122.4085,
+      "odp_id": "odp-2",
+      "description": "ONU customer terminal in downtown commercial office.",
+      "created_at": "2026-01-10T12:15:00Z",
+      "updated_at": "2026-01-10T12:15:00Z"
+    },
+    {
+      "id": "onu-3",
+      "code": "ONU-SUB-9003",
+      "name": "Residential Home ONU-3 (Offline)",
+      "customer_id": "pppoe_user3_offline",
+      "remote_address": "10.10.10.13",
+      "latitude": 37.7785,
+      "longitude": -122.4140,
+      "odp_id": "odp-1",
+      "description": "Unactivated home customer GPON ONT terminal.",
+      "created_at": "2026-01-15T15:30:00Z",
+      "updated_at": "2026-01-15T15:30:00Z"
+    }
+  ],
+  "fiber_cables": [
+    {
+      "id": "cable-1",
+      "cable_code": "CAB-CO-ODC1",
+      "cable_name": "Feeder Trunk SFP to ODC-1",
+      "from_node_type": "SFP",
+      "from_node_id": "sfp-1",
+      "to_node_type": "ODC",
+      "to_node_id": "odc-1",
+      "length_km": 0.45,
+      "total_cores": 12,
+      "cable_type": "G.652D Loose Tube Feeder",
+      "geometry_line": [
+        [37.7750, -122.4180],
+        [37.7760, -122.4165],
+        [37.7770, -122.4150]
+      ],
+      "description": "Heavy core direct-buried feeder backbone routing under 8th Ave.",
+      "created_at": "2026-01-10T12:02:00Z",
+      "updated_at": "2026-01-10T12:02:00Z"
+    },
+    {
+      "id": "cable-2",
+      "cable_code": "CAB-ODC1-ODP1",
+      "cable_name": "Distribution Cable ODC-1 to ODP-101",
+      "from_node_type": "ODC",
+      "from_node_id": "odc-1",
+      "to_node_type": "ODP",
+      "to_node_id": "odp-1",
+      "length_km": 0.38,
+      "total_cores": 8,
+      "cable_type": "G.657A1 Aerial Distribution",
+      "geometry_line": [
+        [37.7770, -122.4150],
+        [37.7780, -122.4140],
+        [37.7790, -122.4130]
+      ],
+      "description": "Aerial primary distribution fiber routing on concrete pole infrastructure.",
+      "created_at": "2026-01-10T12:07:00Z",
+      "updated_at": "2026-01-10T12:07:00Z"
+    },
+    {
+      "id": "cable-3",
+      "cable_code": "CAB-ODC1-ODP2",
+      "cable_name": "Distribution Cable ODC-1 to ODP-102",
+      "from_node_type": "ODC",
+      "from_node_id": "odc-1",
+      "to_node_type": "ODP",
+      "to_node_id": "odp-2",
+      "length_km": 0.52,
+      "total_cores": 8,
+      "cable_type": "G.657A1 Underground Conduit",
+      "geometry_line": [
+        [37.7770, -122.4150],
+        [37.7765, -122.4125],
+        [37.7760, -122.4100]
+      ],
+      "description": "Microduct trench distribution cable routing east side block path.",
+      "created_at": "2026-01-10T12:07:00Z",
+      "updated_at": "2026-01-10T12:07:00Z"
+    },
+    {
+      "id": "cable-4",
+      "cable_code": "CAB-ODP1-ONU1",
+      "cable_name": "Drop Cable ODP-101 to ONU-1",
+      "from_node_type": "ODP",
+      "from_node_id": "odp-1",
+      "to_node_type": "ONU",
+      "to_node_id": "onu-1",
+      "length_km": 0.18,
+      "total_cores": 2,
+      "cable_type": "G.657B3 Flat Drop",
+      "geometry_line": [
+        [37.7790, -122.4130],
+        [37.7801, -122.4124],
+        [37.7805, -122.4120]
+      ],
+      "description": "Pre-connectorized flat drop cable aerial feed into residential building 10A.",
+      "created_at": "2026-01-10T12:12:00Z",
+      "updated_at": "2026-01-10T12:12:00Z"
+    },
+    {
+      "id": "cable-5",
+      "cable_code": "CAB-ODP2-ONU2",
+      "cable_name": "Drop Cable ODP-102 to ONU-2",
+      "from_node_type": "ODP",
+      "from_node_id": "odp-2",
+      "to_node_type": "ONU",
+      "to_node_id": "onu-2",
+      "length_km": 0.14,
+      "total_cores": 2,
+      "cable_type": "G.657B3 Flat Drop",
+      "geometry_line": [
+        [37.7760, -122.4100],
+        [37.7758, -122.4092],
+        [37.7755, -122.4085]
+      ],
+      "description": "Conduit drop cable routed from facade ODP to business floor server room.",
+      "created_at": "2026-01-10T12:12:00Z",
+      "updated_at": "2026-01-10T12:12:00Z"
+    },
+    {
+      "id": "cable-6",
+      "cable_code": "CAB-ODP1-ONU3",
+      "cable_name": "Drop Cable ODP-101 to ONU-3",
+      "from_node_type": "ODP",
+      "from_node_id": "odp-1",
+      "to_node_type": "ONU",
+      "to_node_id": "onu-3",
+      "length_km": 0.09,
+      "total_cores": 2,
+      "cable_type": "G.657B3 Flat Drop",
+      "geometry_line": [
+        [37.7790, -122.4130],
+        [37.7785, -122.4140]
+      ],
+      "description": "Short micro-enclosure drop wire.",
+      "created_at": "2026-01-15T15:32:00Z",
+      "updated_at": "2026-01-15T15:32:00Z"
+    }
+  ],
+  "fiber_cores": [
+    {"id": "core-1-1", "cable_id": "cable-1", "core_number": 1, "status": "USED"},
+    {"id": "core-1-2", "cable_id": "cable-1", "core_number": 2, "status": "USED"},
+    {"id": "core-1-3", "cable_id": "cable-1", "core_number": 3, "status": "SPARE"},
+    {"id": "core-1-4", "cable_id": "cable-1", "core_number": 4, "status": "RESERVED"},
+    {"id": "core-1-5", "cable_id": "cable-1", "core_number": 5, "status": "SPARE"},
+    {"id": "core-1-6", "cable_id": "cable-1", "core_number": 6, "status": "BROKEN"},
+    {"id": "core-1-7", "cable_id": "cable-1", "core_number": 7, "status": "SPARE"},
+    {"id": "core-1-8", "cable_id": "cable-1", "core_number": 8, "status": "SPARE"},
+    {"id": "core-1-9", "cable_id": "cable-1", "core_number": 9, "status": "SPARE"},
+    {"id": "core-1-10", "cable_id": "cable-1", "core_number": 10, "status": "SPARE"},
+    {"id": "core-1-11", "cable_id": "cable-1", "core_number": 11, "status": "SPARE"},
+    {"id": "core-1-12", "cable_id": "cable-1", "core_number": 12, "status": "SPARE"},
+
+    {"id": "core-2-1", "cable_id": "cable-2", "core_number": 1, "status": "USED"},
+    {"id": "core-2-2", "cable_id": "cable-2", "core_number": 2, "status": "SPARE"},
+    {"id": "core-2-3", "cable_id": "cable-2", "core_number": 3, "status": "USED"},
+    {"id": "core-2-4", "cable_id": "cable-2", "core_number": 4, "status": "RESERVED"},
+    {"id": "core-2-5", "cable_id": "cable-2", "core_number": 5, "status": "SPARE"},
+    {"id": "core-2-6", "cable_id": "cable-2", "core_number": 6, "status": "BROKEN"},
+    {"id": "core-2-7", "cable_id": "cable-2", "core_number": 7, "status": "SPARE"},
+    {"id": "core-2-8", "cable_id": "cable-2", "core_number": 8, "status": "SPARE"},
+
+    {"id": "core-3-1", "cable_id": "cable-3", "core_number": 1, "status": "USED"},
+    {"id": "core-3-2", "cable_id": "cable-3", "core_number": 2, "status": "SPARE"},
+    {"id": "core-3-3", "cable_id": "cable-3", "core_number": 3, "status": "RESERVED"},
+    {"id": "core-3-4", "cable_id": "cable-3", "core_number": 4, "status": "SPARE"},
+    {"id": "core-3-5", "cable_id": "cable-3", "core_number": 5, "status": "SPARE"},
+    {"id": "core-3-6", "cable_id": "cable-3", "core_number": 6, "status": "BROKEN"},
+    {"id": "core-3-7", "cable_id": "cable-3", "core_number": 7, "status": "SPARE"},
+    {"id": "core-3-8", "cable_id": "cable-3", "core_number": 8, "status": "SPARE"},
+
+    {"id": "core-4-1", "cable_id": "cable-4", "core_number": 1, "status": "USED"},
+    {"id": "core-4-2", "cable_id": "cable-4", "core_number": 2, "status": "SPARE"},
+
+    {"id": "core-5-1", "cable_id": "cable-5", "core_number": 1, "status": "USED"},
+    {"id": "core-5-2", "cable_id": "cable-5", "core_number": 2, "status": "SPARE"},
+
+    {"id": "core-6-1", "cable_id": "cable-6", "core_number": 1, "status": "USED"},
+    {"id": "core-6-2", "cable_id": "cable-6", "core_number": 2, "status": "SPARE"}
+  ],
+  "splice_points": [
+    {
+      "id": "splice-1",
+      "splice_code": "SPL-BOX-01",
+      "splice_name": "Midspan Closure S1",
+      "latitude": 37.7760,
+      "longitude": -122.4165,
+      "splice_type": "Fusion Splice",
+      "loss_db": 0.03,
+      "description": "Standard overhead closure, fusion spliced for minimal optical return loss."
+    },
+    {
+      "id": "splice-2",
+      "splice_code": "SPL-BOX-02",
+      "splice_name": "Distribution Splice Box S2",
+      "latitude": 37.7780,
+      "longitude": -122.4140,
+      "splice_type": "Mechanical Splice",
+      "loss_db": 0.20,
+      "description": "Quick restoration mechanical splice enclosure near pole mount 12."
+    }
+  ],
+  "cable_splices": [
+    {"id": "cs-1", "cable_id": "cable-1", "splice_id": "splice-1"},
+    {"id": "cs-2", "cable_id": "cable-2", "splice_id": "splice-2"}
+  ]
+}

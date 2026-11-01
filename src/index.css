@@ -1,0 +1,384 @@
+@import "tailwindcss";
+
+/* React Flow Dark Mode Controls */
+.react-flow__controls {
+  border: 1px solid #1e293b !important;
+  background-color: #0f172a !important;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1) !important;
+  border-radius: 6px !important;
+  overflow: hidden !important;
+  padding: 2px !important;
+}
+
+.react-flow__controls-button {
+  background-color: #0f172a !important;
+  border-bottom: 1px solid #1e293b !important;
+  color: #94a3b8 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 26px !important;
+  height: 26px !important;
+}
+
+.react-flow__controls-button:last-child {
+  border-bottom: none !important;
+}
+
+.react-flow__controls-button:hover {
+  background-color: #1e293b !important;
+  color: #22d3ee !important; /* cyan-400 */
+}
+
+.react-flow__controls-button svg {
+  fill: currentColor !important;
+  width: 14px !important;
+  height: 14px !important;
+}
+
+/* Animasi Aliran Cahaya Kabel Serat Optik (Flowing Light Animation) */
+@keyframes flow-forward {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+.cable-flow-feeder {
+  stroke-dasharray: 14, 18 !important;
+  animation: flow-forward 1.2s linear infinite !important;
+}
+
+.cable-flow-distribution {
+  stroke-dasharray: 8, 12 !important;
+  animation: flow-forward 1.6s linear infinite !important;
+}
+
+.cable-flow-drop {
+  stroke-dasharray: 5, 8 !important;
+  animation: flow-forward 2.2s linear infinite !important;
+}
+
+@keyframes neon-pulse {
+  0%, 100% { filter: drop-shadow(0 0 5px rgba(34, 211, 238, 0.7)); }
+  50% { filter: drop-shadow(0 0 12px rgba(34, 211, 238, 1)); }
+}
+
+.cable-flow-traced {
+  stroke-dasharray: 10, 8 !important;
+  animation: flow-forward 0.8s linear infinite, neon-pulse 1.8s ease-in-out infinite !important;
+}
+
+/* ====================================================
+   MINIMALIST THEMATIC STYLING OVERRIDES (SaaS Dashboard Overhaul)
+   ==================================================== */
+
+/* --- GLOBAL THEME CANVAS --- */
+.light-mode {
+  background-color: #f8fafc !important; /* Pure light grey canvas */
+  color: #0f172a !important;
+}
+
+body:not(.light-mode),
+.bg-slate-950:not(.light-mode) {
+  background-color: #13131a !important; /* Deep dark charcoal background */
+}
+
+/* --- LIGHT MODE HEADER CONTAINER --- */
+.light-mode header {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  color: #0f172a;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02) !important;
+}
+
+.light-mode header h1 {
+  color: #0f172a !important;
+  text-shadow: none !important;
+}
+
+.light-mode header p {
+  color: #64748b !important;
+}
+
+/* --- MAIN CARDS & PANELS (Pure White / Deep Charcoal) --- */
+.light-mode main [class*="bg-slate-900"] {
+  background-color: #ffffff !important; /* Pure white cards in light mode */
+  color: #0f172a;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03), 0 2px 4px -2px rgba(0, 0, 0, 0.03) !important;
+  border-radius: 12px !important;
+}
+
+/* Glowing cards in dark mode */
+.min-h-screen:not(.light-mode) [class*="bg-slate-900"] {
+  background-color: #1c1c24 !important; /* Deep dark cards in dark mode */
+  border-color: #222533 !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3) !important;
+  border-radius: 12px !important;
+}
+
+/* --- TEXT ACCENTS INSIDE CARDS --- */
+.light-mode main [class*="bg-slate-900"] .text-slate-100 { color: #0f172a !important; }
+.light-mode main [class*="bg-slate-900"] .text-slate-200 { color: #1e293b !important; }
+.light-mode main [class*="bg-slate-900"] .text-slate-300 { color: #334155 !important; }
+.light-mode main [class*="bg-slate-900"] .text-slate-400 { color: #475569 !important; }
+.light-mode main [class*="bg-slate-900"] .text-slate-500 { color: #64748b !important; }
+
+/* Dashboard numbers inside cards */
+.light-mode main [class*="bg-slate-900"] .font-mono.text-slate-300,
+.light-mode main [class*="bg-slate-900"] .font-mono.text-slate-400 {
+  color: #0f172a !important;
+}
+
+/* --- NESTED WIDGETS (e.g. Audit Logs, lists) --- */
+.light-mode main [class*="bg-slate-900"] [class*="bg-slate-950"],
+.light-mode main [class*="bg-slate-900"] [class*="bg-slate-850"],
+.light-mode main [class*="bg-slate-900"] [class*="bg-slate-800"] {
+  background-color: #f8fafc !important; /* Light background inside cards */
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+.light-mode main [class*="bg-slate-900"] [class*="bg-slate-950"] span,
+.light-mode main [class*="bg-slate-900"] [class*="bg-slate-950"] strong,
+.light-mode main [class*="bg-slate-900"] [class*="bg-slate-800"] span,
+.light-mode main [class*="bg-slate-900"] [class*="bg-slate-800"] strong {
+  color: #0f172a !important;
+}
+
+/* Dark mode nested widgets overrides */
+.min-h-screen:not(.light-mode) [class*="bg-slate-900"] [class*="bg-slate-950"],
+.min-h-screen:not(.light-mode) [class*="bg-slate-900"] [class*="bg-slate-850"],
+.min-h-screen:not(.light-mode) [class*="bg-slate-900"] [class*="bg-slate-800"] {
+  background-color: #13131a !important; /* Pitch black nested background */
+  border-color: #222533 !important;
+  color: #e2e8f0 !important;
+}
+
+.min-h-screen:not(.light-mode) [class*="bg-slate-900"] [class*="bg-slate-950"] span,
+.min-h-screen:not(.light-mode) [class*="bg-slate-900"] [class*="bg-slate-950"] strong,
+.min-h-screen:not(.light-mode) [class*="bg-slate-900"] [class*="bg-slate-800"] span,
+.min-h-screen:not(.light-mode) [class*="bg-slate-900"] [class*="bg-slate-800"] strong {
+  color: #e2e8f0 !important;
+}
+
+/* --- LIGHT MODE GENERAL OVERRIDES (OUTSIDE CARDS) --- */
+.light-mode :not(.bg-slate-900):not(.bg-slate-900\/90) > .text-slate-100 { color: #0f172a !important; }
+.light-mode :not(.bg-slate-900):not(.bg-slate-900\/90) > .text-slate-200 { color: #1e293b !important; }
+.light-mode :not(.bg-slate-900):not(.bg-slate-900\/90) > .text-slate-300 { color: #334155 !important; }
+.light-mode :not(.bg-slate-900):not(.bg-slate-900\/90) > .text-slate-400 { color: #475569 !important; }
+.light-mode :not(.bg-slate-900):not(.bg-slate-900\/90) > .text-slate-500 { color: #64748b !important; }
+
+/* Status text highlights */
+.light-mode .text-cyan-300 { color: #0891b2 !important; } /* High contrast cyan on white */
+.light-mode .text-emerald-300 { color: #059669 !important; } /* High contrast emerald on white */
+.light-mode .text-amber-300 { color: #d97706 !important; }
+.light-mode .text-rose-300 { color: #e11d48 !important; }
+.light-mode .text-blue-300 { color: #2563eb !important; }
+
+/* --- COMPONENT INPUTS & FORMS --- */
+.light-mode input,
+.light-mode select,
+.light-mode textarea {
+  background-color: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+  border-radius: 8px !important;
+}
+
+.light-mode input:focus,
+.light-mode select:focus,
+.light-mode textarea:focus {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.15) !important;
+}
+
+/* --- DATA TABLES (Outside Cards) --- */
+.light-mode thead {
+  background-color: #f8fafc !important;
+}
+
+.light-mode thead th {
+  color: #475569 !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+
+.light-mode tbody tr {
+  border-bottom: 1px solid #f1f5f9 !important;
+}
+
+.light-mode tbody tr:hover {
+  background-color: #f8fafc !important;
+}
+
+.light-mode td {
+  color: #0f172a !important;
+}
+
+/* --- PRIMARY BUTTONS --- */
+.light-mode button.bg-cyan-600 {
+  background-color: #5c67f2 !important; /* Vivid violet-blue action buttons */
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(92, 103, 242, 0.15) !important;
+  border: none !important;
+  font-weight: 700;
+}
+
+.light-mode button.bg-cyan-600:hover {
+  background-color: #4b55e2 !important;
+}
+
+/* --- LEAFLET MAP ACCENTS --- */
+.light-mode .leaflet-popup-content-wrapper,
+.light-mode .leaflet-popup-tip {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
+  border-radius: 12px !important;
+}
+
+.light-mode .leaflet-bar a {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #e2e8f0 !important;
+}
+
+.light-mode .map-marker-label {
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #0f172a !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04) !important;
+  border-radius: 6px !important;
+}
+
+/* --- REACT FLOW GRAPH CONTROLS --- */
+.light-mode .react-flow__controls {
+  border: 1px solid #e2e8f0 !important;
+  background-color: #ffffff !important;
+}
+
+.light-mode .react-flow__controls-button {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+/* --- POPUPS & CONFIRMATIONS --- */
+.light-mode .fixed.bg-slate-950\/85 {
+  background-color: rgba(15, 23, 42, 0.3) !important;
+}
+
+/* --- WHITE KPI COUNT CARDS (Light Mode Contrast) --- */
+.light-mode .kpi-card {
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03), 0 2px 4px -2px rgba(0, 0, 0, 0.03) !important;
+  color: #0f172a !important;
+}
+
+.light-mode .kpi-card h3 {
+  color: #0f172a !important;
+}
+
+.light-mode .kpi-card p {
+  color: #64748b !important;
+}
+
+/* Colored Glassmorphic Icon Backgrounds in Light Mode KPI Cards */
+.light-mode .kpi-card .text-rose-400 {
+  color: #e11d48 !important;
+  background-color: rgba(225, 29, 72, 0.12) !important;
+}
+.light-mode .kpi-card .text-amber-400 {
+  color: #d97706 !important;
+  background-color: rgba(217, 119, 6, 0.12) !important;
+}
+.light-mode .kpi-card .text-sky-400 {
+  color: #0284c7 !important;
+  background-color: rgba(2, 132, 199, 0.12) !important;
+}
+.light-mode .kpi-card .text-emerald-400 {
+  color: #059669 !important;
+  background-color: rgba(5, 150, 105, 0.12) !important;
+}
+.light-mode .kpi-card .text-cyan-400 {
+  color: #0891b2 !important;
+  background-color: rgba(8, 145, 178, 0.12) !important;
+}
+.light-mode .kpi-card .text-yellow-400 {
+  color: #ca8a04 !important;
+  background-color: rgba(202, 138, 4, 0.12) !important;
+}
+
+/* --- DARK MODE KPI COUNT CARDS (Charcoal Harmony) --- */
+.min-h-screen:not(.light-mode) .kpi-card {
+  background-color: #1c1c24 !important;
+  border: 1px solid #222533 !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.25) !important;
+  color: #ffffff !important;
+}
+
+.min-h-screen:not(.light-mode) .kpi-card h3 {
+  color: #ffffff !important;
+}
+
+.min-h-screen:not(.light-mode) .kpi-card p {
+  color: #94a3b8 !important;
+}
+
+/* --- OPTICAL LOSS SPECTRUM GAUGE TRACK --- */
+.light-mode .gauge-track {
+  stroke: #e2e8f0 !important; /* Clean light grey track */
+}
+
+.min-h-screen:not(.light-mode) .gauge-track {
+  stroke: #2e2e3e !important; /* Slate track for dark mode */
+}
+
+/* --- NEON GLOW ON GIS OVERLAY ACTIVE BUTTONS --- */
+.light-mode main [class*="bg-slate-900"] .bg-emerald-500\/15 {
+  background-color: rgba(16, 185, 129, 0.12) !important;
+  border-color: rgba(16, 185, 129, 0.4) !important;
+  color: #059669 !important;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.15) !important;
+  font-weight: 700 !important;
+}
+
+.light-mode main [class*="bg-slate-900"] .bg-cyan-500\/15 {
+  background-color: rgba(6, 182, 212, 0.12) !important;
+  border-color: rgba(6, 182, 212, 0.4) !important;
+  color: #0891b2 !important;
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.15) !important;
+  font-weight: 700 !important;
+}
+
+/* --- AUDIT LEDGER ALERTS (Light Mode Contrast Overrides) --- */
+.light-mode .audit-alert-error {
+  background-color: #fef2f2 !important;
+  border-color: #fca5a5 !important;
+  color: #991b1b !important;
+}
+.light-mode .audit-alert-error p {
+  color: #7f1d1d !important;
+  opacity: 1 !important;
+}
+
+.light-mode .audit-alert-warning {
+  background-color: #fffbeb !important;
+  border-color: #fcd34d !important;
+  color: #92400e !important;
+}
+.light-mode .audit-alert-warning p {
+  color: #78350f !important;
+  opacity: 1 !important;
+}
+
+.light-mode .audit-alert-valid {
+  background-color: #f0fdf4 !important;
+  border-color: #86efac !important;
+  color: #166534 !important;
+}
+.light-mode .audit-alert-valid p {
+  color: #14532d !important;
+  opacity: 1 !important;
+}
